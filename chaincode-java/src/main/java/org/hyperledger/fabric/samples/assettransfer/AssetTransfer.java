@@ -273,8 +273,8 @@ public final class AssetTransfer implements ContractInterface {
 
         Asset duplAsset = new Asset(duplAssetID, asset.getColor(), asset.getSize(), newOwner, asset.getAppraisedValue());
         //Use a Genson to conver the Asset into string, sort it alphabetically and serialize it into a json string
-        String sortedJson = genson.serialize(newAsset);
-        stub.putStringState(assetID, sortedJson);
+        String sortedJson = genson.serialize(duplAsset);
+        stub.putStringState(duplAssetID, sortedJson);
 
         return duplAsset;
     }
